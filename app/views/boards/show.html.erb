@@ -1,0 +1,6 @@
+<%= link_to "back to thread list", "/boards" %>
+<hr>
+<h1><%= @board.title %></h1>
+<%= link_to "Edit title", "/boards/#{@board.id}/edit" %> <br>
+<%= link_to "Delete", "/boards/#{@board.id}", method: :delete, data: { confirm: "Delete this thread?" } %>
+<hr>
