@@ -37,7 +37,7 @@
   private
 
    def params_board
-    params.permit(:title, :editor)
+    params.require(:board).permit(:title, :editor)
    end
 
  end
