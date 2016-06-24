@@ -1,7 +1,7 @@
-<%= link_to @board.title, "/boards/#{@board.id}" %>
+<%= link_to @board.title, board_path(@board) %>
 <hr>
 <h1>Boards#edit</h1>
-<%= form_tag "/boards/#{@board.id}", method: :put do %>
+<%= form_tag board_path(@board), method: :put do %>
  タイトル：<%= text_field_tag :title,  @board.title  %> <br>
  作成者：  <%= text_field_tag :editor, @board.editor %> <br>
  <%= submit_tag %>

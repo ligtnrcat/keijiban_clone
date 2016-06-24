@@ -1,6 +1,6 @@
 <h1>2chクローン</h1>
-<%= link_to "Create new thread", "/boards/new" %>
+<%= link_to "Create new thread", new_board_path %>
 <hr>
 <% @boards.each do |board| %>
- <%= link_to board.title, "/boards/#{board.id}" %><br>
+ <%= link_to board.title, board_path(board) %><br>
 <% end %>
