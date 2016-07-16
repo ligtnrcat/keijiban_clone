@@ -1,6 +1,9 @@
 <%= link_to @board.title, board_path(@board) %>
 <hr>
 <h1>Boards#edit</h1>
+<% if @board.errors.any? %>
+  <%= @board.errors.full_messages %>
+<% end %>
 <%= form_for @board do |f| %>
  タイトル：<%= f.text_field :title  %> <br>
  作成者：  <%= f.text_field :editor %> <br>

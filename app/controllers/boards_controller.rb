@@ -14,8 +14,11 @@
 
   def create
    @board = Board.new(params_board)
-   @board.save
-   redirect_to board_url(@board)
+   if @board.save
+     redirect_to board_url(@board)
+   else
+     render "new"
+   end
   end
 
   def edit
@@ -24,8 +27,11 @@
 
   def update
    @board = Board.find(params[:id])
-   @board.update_attributes(params_board)
-   redirect_to board_url(@board)
+   if @board.update_attributes(params_board)
+    redirect_to board_url(@board)
+   else
+    render "edit"
+   end
   end
 
   def destroy

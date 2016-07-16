@@ -1,6 +1,12 @@
-<%= link_to "back to thread list", boards_path %>
-<hr>
-<h1><%= @board.title %></h1>
-<%= link_to "Edit title", edit_board_path %> <br>
-<%= link_to "Delete", board_path(@board), method: :delete, data: { confirm: "Delete this thread?" } %>
-<hr>
+<div class="wrapper wrapper__bg">
+ <div class="container">
+ <%= link_to "back to thread list", boards_path %>
+ <hr>
+ <div class="board">
+ <h1 class="board--name"><%= @board.title %></h1>
+ </div>
+ <%= link_to "Edit title", edit_board_path %> <br>
+ <%= link_to "Delete", board_path(@board), method: :delete, data: { confirm: "Delete this thread?" } %>
+ <hr>
+ </div>
+<div>
